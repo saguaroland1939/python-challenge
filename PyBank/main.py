@@ -12,7 +12,7 @@ import csv
 import os
 
 month_list = []
-i=0
+month_count = 0
 
 #Read store relative path of csv for portability.
 curr_dir = os.getcwd()
@@ -23,9 +23,9 @@ with open("budget_data.csv") as datafile:
     next(datafile) #Skip header row
     data_rows = csv.reader(datafile, delimiter = ',')
     for row in data_rows:
-        #print(row[0] + " " + row[1])
+        #Accummulate list of unique months
         if row[0] not in month_list:
-            month_list[1] = row[1]
-            print("sdaf")
-            i+=1
-        
+            month_list.append(row[0])
+            month_count += 1
+#Print number of months in dataset
+print(str(month_count))
