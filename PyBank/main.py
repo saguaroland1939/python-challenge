@@ -34,11 +34,11 @@ with open("budget_data.csv") as data_file:
             month_count += 1
         #Accummulate net profit
         net_profit = net_profit + int(row[1])
-        if int(row[1]) > int(greatest_profit):
-            greatest_profit = row[1]
+        if int(row[1]) > greatest_profit:
+            greatest_profit = int(row[1])
             greatest_profit_info = [row[0], row[1]]
-        elif int(row[1]) < int(greatest_loss):
-            greatest_loss = row[1]
+        elif int(row[1]) < greatest_loss:
+            greatest_loss = int(row[1])
             greatest_loss_info = [row[0], row[1]]
 
 
@@ -52,5 +52,3 @@ print(f"Average change: {str(net_profit / month_count)}")
 print(f"Greatest increase in profit: {greatest_profit_info[1]} on {greatest_profit_info[0]}")
 #Print greatest decrease in profit
 print(f"Greatest decrease inprofit: {greatest_loss_info[1]} on {greatest_loss_info[0]}")
-
-
