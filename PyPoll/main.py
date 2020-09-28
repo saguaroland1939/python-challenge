@@ -53,8 +53,8 @@ with open(csvpath, "r") as data_file:
             if row[2] == candidate:
                 candidate_vote_count +=1
         percent_votes = round(candidate_vote_count / total_vote_count * 100, 3)
-        #Append election results to report for later output (Part II)
-        report = report + f"\n{candidate:9} {percent_votes}% {candidate_vote_count}"
+        #Format and append election results to report for later output (Part II)
+        report = report + f"\n{candidate:9} {percent_votes}% ({candidate_vote_count})"
         if candidate_vote_count > highest_vote_count:
             highest_vote_count = candidate_vote_count
             winner_name = candidate
@@ -62,10 +62,10 @@ with open(csvpath, "r") as data_file:
         data_rows = reset_csv(data_file)
 
 #Append election results to report for later output (Part III)
-report = report + f"\n************************* \nWinner: {winner_name}"
+report = report + f"\n************************* \nWinner: {winner_name}"\
 f"\n*************************"
 
-#Print report to terminal and csv file
+#Print report to terminal and new csv file
 print(report)
 output_directory = "Analysis"
 os.chdir(output_directory)
