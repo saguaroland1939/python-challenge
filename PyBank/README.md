@@ -3,8 +3,8 @@ a statistical report stored to a csv file and printed to the terminal.
 
 The input file must be called "budget_data.csv" and located in a folder
 called "Resources" within the same folder as this script. The dataset 
-should consist of a series of months with corresponding profits
-and losses.
+should have a header row and consist of comma-separated series of months
+with corresponding profits and losses.
 
 The program outputs a new csv file called "banking_results.csv" to the
 Analysis folder within the same folder as this script. The report includes
